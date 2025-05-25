@@ -4,9 +4,9 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 
 const Index = () => {
-  const whatsappNumber = "5511999999999"; // Substitua pelo seu número real
+  const whatsappNumber = "13991883908"; // Substitua pelo seu número real
   const whatsappMessage = "Olá! Gostaria de saber mais sobre o programa de emagrecimento.";
-  
+
   const openWhatsApp = () => {
     const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
     window.open(url, '_blank');
@@ -23,13 +23,13 @@ const Index = () => {
             <span className="block text-yellow-300">30 Dias</span>
           </h1>
           <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto leading-relaxed">
-            Descubra o método revolucionário que já ajudou mais de 5.000 pessoas a 
+            Descubra o método revolucionário que já ajudou mais de 5.000 pessoas a
             <strong> perder até 15kg </strong> de forma saudável e definitiva
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
-            <Button 
+            <Button
               onClick={openWhatsApp}
-              size="lg" 
+              size="lg"
               className="bg-green-500 hover:bg-green-600 text-white px-8 py-4 text-lg font-semibold rounded-full shadow-lg transform hover:scale-105 transition-all duration-300"
             >
               <MessageCircle className="mr-2 h-6 w-6" />
@@ -72,9 +72,9 @@ const Index = () => {
                 <h4 className="text-2xl font-bold text-green-800 mb-2">RECEBA EM 24 HORAS</h4>
                 <p className="text-green-700 text-lg font-semibold">PAGUE NA ENTREGA</p>
               </div>
-              <Button 
+              <Button
                 onClick={openWhatsApp}
-                size="lg" 
+                size="lg"
                 className="w-full bg-green-500 hover:bg-green-600 text-white px-8 py-6 text-xl font-bold rounded-full shadow-xl transform hover:scale-105 transition-all duration-300"
               >
                 <MessageCircle className="mr-3 h-7 w-7" />
@@ -82,8 +82,8 @@ const Index = () => {
               </Button>
             </div>
             <div className="order-1 lg:order-2">
-              <img 
-                src="/lovable-uploads/8bdd3d5d-6c70-4b15-b3eb-fc702f259617.png" 
+              <img
+                src="/lovable-uploads/8bdd3d5d-6c70-4b15-b3eb-fc702f259617.png"
                 alt="EU+LEVE Spray Relaxante - Queima Gordura Rápido, Reduz Ansiedade Natural, Corpo Mais Leve"
                 className="w-full h-auto rounded-lg shadow-2xl"
               />
@@ -101,18 +101,29 @@ const Index = () => {
           <p className="text-xl text-gray-700 mb-12 max-w-2xl mx-auto">
             Descubra os segredos que mudaram a vida de milhares de pessoas e como você pode ser a próxima!
           </p>
-          
-          <div className="relative bg-black rounded-2xl overflow-hidden shadow-2xl mb-8 group cursor-pointer">
-            <div className="aspect-video bg-gradient-to-br from-red-400 to-pink-600 flex items-center justify-center">
-              <div className="text-center text-white">
-                <div className="bg-white/20 backdrop-blur rounded-full p-6 mb-4 inline-flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <Play className="h-16 w-16 text-white ml-2" />
+
+          {/* <div className="relative bg-black rounded-2xl overflow-hidden shadow-2xl mb-8 group cursor-pointer">
+              <div className="aspect-video bg-gradient-to-br from-red-400 to-pink-600 flex items-center justify-center">
+                <div className="text-center text-white">
+                  <div className="bg-white/20 backdrop-blur rounded-full p-6 mb-4 inline-flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <Play className="h-16 w-16 text-white ml-2" />
+                  </div>
+                  <h3 className="text-2xl font-bold mb-2">TRANSFORMAÇÃO REAL</h3>
+                  <p className="text-lg opacity-90">Clique para assistir</p>
                 </div>
-                <h3 className="text-2xl font-bold mb-2">TRANSFORMAÇÃO REAL</h3>
-                <p className="text-lg opacity-90">Clique para assistir</p>
               </div>
-            </div>
-            <div className="absolute inset-0 bg-black/30 group-hover:bg-black/20 transition-colors duration-300"></div>
+              <div className="absolute inset-0 bg-black/30 group-hover:bg-black/20 transition-colors duration-300"></div>
+            </div> */}
+          <div className="relative bg-black rounded-2xl overflow-hidden shadow-2xl mb-8 group">
+            <video
+              controls
+              className="w-full aspect-video rounded-2xl object-contain"
+              poster="/logovideo.png"
+            >
+              <source src="/video.mp4" type="video/mp4" />
+              Seu navegador não suporta vídeos HTML5.
+            </video>
+            <div className="absolute inset-0 bg-black/30 group-hover:bg-black/20 transition-colors duration-300 pointer-events-none"></div>
           </div>
 
           <div className="bg-yellow-100 border-l-4 border-yellow-500 p-6 rounded-lg mb-8">
@@ -143,9 +154,9 @@ const Index = () => {
             ))}
           </div>
 
-          <Button 
+          <Button
             onClick={openWhatsApp}
-            size="lg" 
+            size="lg"
             className="bg-red-500 hover:bg-red-600 text-white px-12 py-6 text-xl font-bold rounded-full shadow-2xl transform hover:scale-105 transition-all duration-300 animate-pulse"
           >
             <MessageCircle className="mr-3 h-7 w-7" />
@@ -201,16 +212,17 @@ const Index = () => {
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              { name: "Maria Silva", weight: "23kg perdidos", time: "4 meses" },
-              { name: "João Santos", weight: "18kg perdidos", time: "3 meses" },
-              { name: "Ana Costa", weight: "15kg perdidos", time: "2 meses" },
+              { name: "Maria Silva", weight: "23kg perdidos", time: "4 meses", Image: "/img/img1.png" },
+              { name: "Bianca Almeida", weight: "18kg perdidos", time: "3 meses", Image: "/img/img2.png" },
+              { name: "Ana Costa", weight: "15kg perdidos", time: "2 meses", Image: "/img/img3.png" },
             ].map((transformation, index) => (
               <Card key={index} className="overflow-hidden hover:shadow-xl transition-shadow duration-300">
                 <div className="h-64 bg-gradient-to-br from-purple-200 to-pink-200 flex items-center justify-center">
-                  <div className="text-center text-gray-600">
-                    <Users className="h-16 w-16 mx-auto mb-4" />
-                    <p className="text-sm">Foto do antes/depois</p>
-                  </div>
+                  <img
+                    src={transformation.Image}
+                    alt={`Antes e depois de ${transformation.name}`}
+                    className="h-full object-cover"
+                  />
                 </div>
                 <CardContent className="p-6 text-center bg-white">
                   <h3 className="text-xl font-bold mb-2 text-gray-800">{transformation.name}</h3>
@@ -221,9 +233,9 @@ const Index = () => {
             ))}
           </div>
           <div className="text-center mt-12">
-            <Button 
+            <Button
               onClick={openWhatsApp}
-              size="lg" 
+              size="lg"
               className="bg-green-500 hover:bg-green-600 text-white px-8 py-4 text-lg font-semibold rounded-full"
             >
               <MessageCircle className="mr-2 h-5 w-5" />
@@ -295,8 +307,8 @@ const Index = () => {
               <Award className="h-16 w-16 text-purple-600 mx-auto mb-6" />
               <h3 className="text-2xl font-bold mb-4 text-gray-800">Garantia de Resultado</h3>
               <p className="text-gray-600 text-lg leading-relaxed">
-                Temos tanta confiança no nosso método que oferecemos 
-                <strong> garantia de 30 dias</strong>. Se você não perder pelo menos 5kg, 
+                Temos tanta confiança no nosso método que oferecemos
+                <strong> garantia de 30 dias</strong>. Se você não perder pelo menos 5kg,
                 devolvemos 100% do seu investimento.
               </p>
             </div>
@@ -311,12 +323,12 @@ const Index = () => {
             Pronto Para Sua <span className="text-yellow-300">Transformação?</span>
           </h2>
           <p className="text-xl mb-8 leading-relaxed max-w-2xl mx-auto">
-            Não deixe para amanhã a mudança que pode começar hoje. 
+            Não deixe para amanhã a mudança que pode começar hoje.
             Milhares de pessoas já transformaram suas vidas. Você será a próxima?
           </p>
-          <Button 
+          <Button
             onClick={openWhatsApp}
-            size="lg" 
+            size="lg"
             className="bg-green-500 hover:bg-green-600 text-white px-12 py-6 text-xl font-bold rounded-full shadow-2xl transform hover:scale-105 transition-all duration-300"
           >
             <MessageCircle className="mr-3 h-7 w-7" />
